@@ -14,8 +14,6 @@ const CategorySelector = () => {
       });
   }, []);
 
-  console.log(categories);
-
   return (
     <nav className="CategorySelector">
       {categories.map((category) => {
