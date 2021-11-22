@@ -1,8 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto;
 }
 
 .Header {
-  margin: 0 auto;
-  text-align: center;
+  border: solid 2px orange;
+}
+
+.CategoryHome {
+  border: solid 2px blue;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+}
+
+.CategorySelector {
+  border: solid 2px green;
+  padding: 10px;
+}
+
+.ReviewList {
+  border: solid 2px red;
+}
+
+.ReviewCard {
+  border: solid 2px darkblue;
 }
