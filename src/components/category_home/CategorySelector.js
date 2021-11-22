@@ -17,7 +17,7 @@ const CategorySelector = () => {
   console.log(categories);
 
   return (
-    <nav>
+    <nav className="CategorySelector">
       {categories.map((category) => {
         return (
           <Link key={category.slug} to={`/reviews/${category.slug}`}>
