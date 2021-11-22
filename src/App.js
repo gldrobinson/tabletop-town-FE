@@ -1,17 +1,22 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ReviewContext } from "./contexts/ReviewContext";
 import Header from "./components/Header.js";
 import CategoryHome from "./components/category_home/CategoryHome";
+import { useState } from "react";
 
 function App() {
+  const [review, setReview] = useState({});
   return (
     <div className="App">
       <Header />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<CategoryHome />} />
-          <Route path="/reviews/:category" element={<CategoryHome />} />
-        </Routes>
+        <ReviewContext.Provider value={{ review, setReview }}>
+          <Routes>
+            <Route path="/" element={<CategoryHome />} />
+            <Route path="/reviews/:category" element={<CategoryHome />} />
+          </Routes>
+        </ReviewContext.Provider>
       </BrowserRouter>
     </div>
   );
