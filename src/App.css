@@ -29,8 +29,45 @@
 
 .ReviewList {
   border: solid 2px red;
+  padding: 10px;
 }
 
 .ReviewCard {
   border: solid 2px darkblue;
+  margin: 0 auto;
+  padding: 10px;
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: 35% 35% 15% 15%;
+  grid-template-rows: 7% 79% 7% 7%;
+  grid-template-areas:
+    "designer designer designer designer"
+    "image image image image"
+    "title title title title"
+    "owner time comments votes";
+}
+
+.review_title {
+  grid-area: title;
+}
+
+.review_designer {
+  grid-area: designer;
+  text-align: center;
+  background-color: fuchsia;
+}
+.review_owner {
+  grid-area: owner;
+}
+
+.review_time {
+  grid-area: time;
+  text-align: left;
+}
+
+.review_img {
+  width: 450;
+  height: 250px;
+  grid-area: image;
+  margin: 0 auto;
 }
