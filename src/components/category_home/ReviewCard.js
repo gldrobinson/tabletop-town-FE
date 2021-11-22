@@ -10,15 +10,26 @@ const ReviewCard = ({ review }) => {
     review_created_at,
   } = review;
 
+  const date = review_created_at.split("T")[0];
+
   return (
     <section className="ReviewCard">
-      <h3 className="review_designer">{designer}</h3>
+      <p className="reviewLabel">Review</p>
       <img className="review_img" src={review_image_url} alt={designer} />
-      <h4 className="review_title">{title}</h4>
-      <h5 className="review_owner">{owner}</h5>
-      <p className="review_time">{review_created_at}</p>
-      <p>Votes: {votes}</p>
-      <p>Comments: {comment_count}</p>
+      <h3 className="review_title">{title}</h3>
+      {/* <h3 className="review_designer">{designer}</h3> */}
+
+      {/* <p className="review_owner">{owner}</p> */}
+
+      <span className="review_date" role="img" aria-label="created_at">
+        🕙 {date}
+      </span>
+      <span className="review_votes" role="img" aria-label="likes">
+        👍 {votes}
+      </span>
+      <span className="review_comments" role="img" aria-label="comments">
+        👁️‍🗨️ {comment_count}
+      </span>
     </section>
   );
 };
