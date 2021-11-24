@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import useCategories from "../../hooks/useCategories";
 
 const CategorySelector = () => {
-  const { categories } = useCategories();
+  const { categories, isLoading, error } = useCategories();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <nav className="CategorySelector">
