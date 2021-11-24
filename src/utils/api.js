@@ -10,8 +10,13 @@ export const getCategories = () => {
   });
 };
 
-export const getReviews = () => {
-  return gamesApi.get("/reviews").then((res) => {
-    return res.data.reviews;
-  });
+export const getReviews = (category) => {
+  return gamesApi
+    .get("/reviews", {
+      params: { category: category },
+    })
+    .then((res) => {
+      console.log(res.data.reviews);
+      return res.data.reviews;
+    });
 };

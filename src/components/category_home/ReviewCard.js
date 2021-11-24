@@ -1,6 +1,7 @@
 const ReviewCard = ({ review }) => {
   const {
     title,
+    category,
     review_id,
     designer,
     review_image_url,
@@ -20,7 +21,7 @@ const ReviewCard = ({ review }) => {
       {/* <h3 className="review_designer">{designer}</h3> */}
 
       {/* <p className="review_owner">{owner}</p> */}
-
+      <p>{category}</p>
       <span className="review_date" role="img" aria-label="created_at">
         🕙 {date}
       </span>
