@@ -4,7 +4,7 @@ import useReview from "../../hooks/useReview";
 
 const FullReview = () => {
   const { review_id } = useParams();
-  const { review } = useReview(review_id);
+  const { review, isLoading, error } = useReview(review_id);
   const {
     title,
     category,
@@ -17,6 +17,12 @@ const FullReview = () => {
   } = review;
   const date = new Date(review_created_at);
   const timeAgo = moment(date).fromNow();
+
+  console.log(error);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <section className="FullReview">
       <div id="full_review_profile" className="profile_section">
