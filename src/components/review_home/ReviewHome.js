@@ -3,7 +3,7 @@ import CommentsList from "./CommentsList";
 
 const ReviewHome = () => {
   return (
-    <main>
+    <main className="ReviewHome">
       <h2>Review Home</h2>
       <FullReview />
       <CommentsList />

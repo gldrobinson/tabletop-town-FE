@@ -7,7 +7,7 @@ const CommentCard = ({ comment }) => {
 
   const date = new Date(comment_created_at);
   const timeAgo = moment(date).fromNow();
-  console.log(timeAgo);
+
   return (
     <section className="CommentCard">
       <div className="profile_section">
@@ -17,13 +17,17 @@ const CommentCard = ({ comment }) => {
           alt="profile img"
         />
         <p className="profile_author">{author}</p>
-        <p className="comment_time">{timeAgo}</p>
+        <p className="time">{timeAgo}</p>
       </div>
       <p className="comment_body">{comment_body}</p>
-      <div className="comment_votes">
-        <span className="votes">⬆️</span>
+      <div className="votes_section">
+        <span className="votes" role="img" aria-label="vote_up">
+          ⬆️
+        </span>
         <p className="votes">{votes}</p>
-        <span className="votes">⬇️</span>
+        <span className="votes" ole="img" aria-label="vote_down">
+          ⬇️
+        </span>
       </div>
     </section>
   );
