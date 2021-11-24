@@ -1,22 +1,10 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getReviewById } from "../../utils/api";
+import useReview from "../../hooks/useReview";
 
 const FullReview = () => {
   const { review_id } = useParams();
-  const [review, setReview] = useState({});
-
-  useEffect(() => {
-    getReviewById(review_id)
-      .then((reviewReceived) => {
-        setReview(reviewReceived);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+  const { review } = useReview(review_id);
   const {
     title,
     category,
