@@ -1,11 +1,24 @@
 import moment from "moment";
+import useVoter from "../../hooks/useVoter";
+import { patchCommentVote } from "../../utils/api";
 
 const CommentCard = ({ comment }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =
     comment;
+  const { addedVotes, incVote, decVote } = useVoter(0);
 
   const date = new Date(comment_created_at);
   const timeAgo = moment(date).fromNow();
+
+  const handleUpVote = () => {
+    incVote();
+    patchCommentVote(comment_id, 1);
+  };
+
+  const handleDownVote = () => {
+    decVote();
+    patchCommentVote(comment_id, -1);
+  };
 
   return (
     <section className="CommentCard">
@@ -20,11 +33,21 @@ const CommentCard = ({ comment }) => {
       </div>
       <p className="comment_body">{comment_body}</p>
       <div className="votes_section">
-        <span className="votes" role="img" aria-label="vote_up">
+        <span
+          onClick={handleUpVote}
+          className="votes"
+          role="img"
+          aria-label="vote_up"
+        >
           ⬆️
         </span>
-        <p className="votes">{votes}</p>
-        <span className="votes" ole="img" aria-label="vote_down">
+        <p className="votes">{votes + addedVotes}</p>
+        <span
+          onClick={handleDownVote}
+          className="votes"
+          ole="img"
+          aria-label="vote_down"
+        >
           ⬇️
         </span>
       </div>

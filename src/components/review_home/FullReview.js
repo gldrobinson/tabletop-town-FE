@@ -2,7 +2,7 @@ import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
 import useVoter from "../../hooks/useVoter";
-import { patchVote } from "../../utils/api";
+import { patchReviewVote } from "../../utils/api";
 
 const FullReview = () => {
   const { review_id } = useParams();
@@ -25,12 +25,12 @@ const FullReview = () => {
 
   const handleUpVote = () => {
     incVote();
-    patchVote(review_id, 1);
+    patchReviewVote(review_id, 1);
   };
 
   const handleDownVote = () => {
     decVote();
-    patchVote(review_id, -1);
+    patchReviewVote(review_id, -1);
   };
 
   if (isLoading) return <p>Loading...</p>;

@@ -32,9 +32,19 @@ export const getComments = (id) => {
   });
 };
 
-export const patchVote = (id, increment) => {
+export const patchReviewVote = (id, increment) => {
   return gamesApi
     .patch(`/reviews/${id}`, {
+      inc_votes: increment,
+    })
+    .then((res) => {
+      console.log(res);
+    });
+};
+
+export const patchCommentVote = (id, increment) => {
+  return gamesApi
+    .patch(`/comments/${id}`, {
       inc_votes: increment,
     })
     .then((res) => {
