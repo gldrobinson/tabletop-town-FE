@@ -4,7 +4,10 @@ import useReviews from "../../hooks/useReviews";
 
 const ReviewList = () => {
   const { category } = useParams();
-  const { reviews } = useReviews(category);
+  const { reviews, isLoading, error } = useReviews(category);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <main className="ReviewList">

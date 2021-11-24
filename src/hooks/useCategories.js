@@ -16,7 +16,6 @@ const useCategories = () => {
       .catch((err) => {
         setIsLoading(false);
         setError("Sorry something went wrong!");
-        console.log(err);
       });
   }, []);
 
