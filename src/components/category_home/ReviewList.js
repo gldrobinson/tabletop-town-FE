@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
-import { getReviews } from "../../utils/api";
 import { useParams } from "react-router";
+import useReviews from "../../hooks/useReviews";
 
 const ReviewList = () => {
   const { category } = useParams();
-  const [reviews, setReviews] = useState([]);
-  useEffect(() => {
-    getReviews(category).then((reviewsReceived) => {
-      setReviews(reviewsReceived);
-    });
-  }, [category]);
+  const { reviews } = useReviews(category);
 
   return (
     <main className="ReviewList">
