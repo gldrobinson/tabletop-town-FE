@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.ReviewHome {
+  text-align: center;
+  width: 1800px;
+  margin: 0 auto;
+}
+
+.FullReview {
+  border: blue solid 2px;
+}
+
+.CommentList {
+  border: green solid 2px;
+}
+
+.CommentCard {
+  border: pink solid 2px;
+  display: grid;
+  grid-template-columns: 4% 96%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "votes profile"
+    "votes comment_body";
+}
+
+.profile_section {
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 5px;
+  display: flex;
+  grid-area: profile;
+}
+
+.profile_img {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+.profile_author {
+  padding-top: 4px;
+  color: rgb(32, 32, 145);
+}
+
+.comment_time {
+  padding-top: 4px;
+  padding-left: 10px;
+}
+
+.comment_body {
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 45px;
+  grid-area: comment_body;
+}
+
+.comment_votes {
+  grid-area: votes;
+  margin: 0;
+  padding: 5px;
+}
+.votes {
+  padding: 5px;
+}
