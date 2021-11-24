@@ -31,3 +31,13 @@ export const getComments = (id) => {
     return res.data.comments;
   });
 };
+
+export const patchVote = (id, increment) => {
+  return gamesApi
+    .patch(`/reviews/${id}`, {
+      inc_votes: increment,
+    })
+    .then((res) => {
+      console.log(res);
+    });
+};

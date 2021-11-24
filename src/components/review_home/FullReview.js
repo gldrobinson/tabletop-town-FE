@@ -1,10 +1,14 @@
 import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
+import useVoter from "../../hooks/useVoter";
+import { patchVote } from "../../utils/api";
 
 const FullReview = () => {
   const { review_id } = useParams();
   const { review, isLoading, error } = useReview(review_id);
+  const { addedVotes, incVote, decVote } = useVoter(0);
+
   const {
     title,
     category,
@@ -15,10 +19,19 @@ const FullReview = () => {
     review_body,
     review_created_at,
   } = review;
+
   const date = new Date(review_created_at);
   const timeAgo = moment(date).fromNow();
 
-  console.log(error);
+  const handleUpVote = () => {
+    incVote();
+    patchVote(review_id, 1);
+  };
+
+  const handleDownVote = () => {
+    decVote();
+    patchVote(review_id, -1);
+  };
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -41,13 +54,23 @@ const FullReview = () => {
       <p id="full_review_body">{review_body}</p>
       <img id="full_review_img" src={review_image_url} />
       <div className="votes_section">
-        <span className="votes" role="img" aria-label="vote_up">
+        <span
+          onClick={handleUpVote}
+          className="votes"
+          role="img"
+          aria-label="vote_up"
+        >
           ⬆️
         </span>
         <p id="full_review_votes" className="votes">
-          {votes}
+          {votes + addedVotes}
         </p>
-        <span className="votes" ole="img" aria-label="vote_down">
+        <span
+          onClick={handleDownVote}
+          className="votes"
+          ole="img"
+          aria-label="vote_down"
+        >
           ⬇️
         </span>
       </div>
