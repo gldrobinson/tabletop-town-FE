@@ -3,7 +3,6 @@ import moment from "moment";
 const CommentCard = ({ comment }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =
     comment;
-  //const date = comment_created_at.split("T")[0];
 
   const date = new Date(comment_created_at);
   const timeAgo = moment(date).fromNow();

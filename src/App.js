@@ -1,4 +1,6 @@
 import "./App.css";
+import "./styling/review_home.css";
+import "./styling/category_home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ReviewContext } from "./contexts/ReviewContext";
 import Header from "./components/Header.js";

@@ -44,10 +44,12 @@
   padding-top: 5px;
 }
 
-.review_img {
+#full_review_img {
   grid-area: image;
   margin: 0 auto;
   padding: 5px;
+  width: 300px;
+  height: 160px;
 }
 
 .CommentList {

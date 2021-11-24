@@ -1,0 +1,58 @@
+.CategoryHome {
+  border: solid 2px blue;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+}
+
+.CategorySelector {
+  border: solid 2px rgb(175, 223, 175);
+  padding: 10px;
+}
+
+.ReviewList {
+  border: solid 2px red;
+  padding: 10px;
+}
+
+.ReviewCard {
+  height: 150px;
+  margin: 0 auto;
+  width: 700px;
+  border: solid 2px darkblue;
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 40% 30%;
+  grid-template-areas:
+    "profile image"
+    "title image"
+    "interaction image";
+}
+
+.profile_selection {
+  grid-area: profile;
+}
+
+.reviewCard_title {
+  grid-area: title;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 15px;
+  color: black;
+}
+
+.review_interaction {
+  display: flex;
+  grid-area: interaction;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.review_img {
+  width: 180px;
+  height: 90px;
+  grid-area: image;
+  margin: 0 auto;
+  padding-top: 5px;
+}

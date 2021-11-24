@@ -45,7 +45,7 @@ const FullReview = () => {
         {designer} - {category}
       </p>
       <p id="full_review_body">{review_body}</p>
-      <img className="review_img" src={review_image_url} />
+      <img id="full_review_img" src={review_image_url} />
       <div className="votes_section">
         <span className="votes" role="img" aria-label="vote_up">
           ⬆️

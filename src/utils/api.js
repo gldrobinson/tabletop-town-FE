@@ -16,7 +16,6 @@ export const getReviews = (category) => {
       params: { category: category },
     })
     .then((res) => {
-      console.log(res.data.reviews);
       return res.data.reviews;
     });
 };
