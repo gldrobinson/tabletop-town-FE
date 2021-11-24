@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 const ReviewCard = ({ review }) => {
+  const navigate = useNavigate();
   const {
     title,
     category,
@@ -13,11 +16,22 @@ const ReviewCard = ({ review }) => {
 
   const date = review_created_at.split("T")[0];
 
+  const handleOnClick = (e) => {
+    navigate(`/reviews/${review_id}`);
+  };
+
   return (
     <section className="ReviewCard">
       <p className="reviewLabel">Review</p>
-      <img className="review_img" src={review_image_url} alt={designer} />
-      <h3 className="review_title">{title}</h3>
+      <img
+        onClick={handleOnClick}
+        className="review_img"
+        src={review_image_url}
+        alt={designer}
+      />
+      <h3 onClick={handleOnClick} className="review_title">
+        {title}
+      </h3>
       {/* <h3 className="review_designer">{designer}</h3> */}
 
       {/* <p className="review_owner">{owner}</p> */}
