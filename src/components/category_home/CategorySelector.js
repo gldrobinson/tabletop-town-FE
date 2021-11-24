@@ -1,18 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCategories } from "../../utils/api";
+import useCategories from "../../hooks/useCategories";
 
 const CategorySelector = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    getCategories()
-      .then((categoriesReceived) => {
-        setCategories(categoriesReceived);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const { categories } = useCategories();
 
   return (
     <nav className="CategorySelector">
