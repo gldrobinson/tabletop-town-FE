@@ -1,5 +1,29 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { getComments } from "../../utils/api";
+import CommentCard from "./CommentCard";
+
 const CommentsList = () => {
-  return <h2>Comments List</h2>;
+  const { review_id } = useParams();
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    getComments(review_id)
+      .then((commentsReceived) => {
+        setComments(commentsReceived);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <section>
+      {comments.map((comment) => {
+        return <CommentCard key={comment.comment_id} comment={comment} />;
+      })}
+    </section>
+  );
 };
 
 export default CommentsList;
