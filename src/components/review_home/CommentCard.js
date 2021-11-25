@@ -15,10 +15,12 @@ const CommentCard = ({ comment }) => {
     patchCommentVote(comment_id, 1);
   };
 
-  const handleDownVote = () => {
+  const handleDownVote = (e) => {
     decVote();
     patchCommentVote(comment_id, -1);
   };
+
+  console.log(addedVotes, comment_id);
 
   return (
     <section className="CommentCard">
@@ -38,6 +40,7 @@ const CommentCard = ({ comment }) => {
           className="votes"
           role="img"
           aria-label="vote_up"
+          value={votes + addedVotes}
         >
           ⬆️
         </span>
@@ -45,8 +48,9 @@ const CommentCard = ({ comment }) => {
         <span
           onClick={handleDownVote}
           className="votes"
-          ole="img"
+          role="img"
           aria-label="vote_down"
+          value={votes + addedVotes}
         >
           ⬇️
         </span>

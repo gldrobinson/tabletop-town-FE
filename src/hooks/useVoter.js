@@ -11,9 +11,6 @@ const useVoter = (originalVote) => {
 
   const decVote = () => {
     setAddedVotes((currVote) => {
-      if (currVote <= 0) {
-        return 0;
-      }
       return currVote - 1;
     });
   };
