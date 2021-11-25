@@ -1,6 +1,8 @@
 .CategoryHome {
+  text-align: center;
   margin: 0 auto;
   max-width: 90vw;
+  min-width: 500px;
   border: solid 2px blue;
   display: grid;
   grid-template-columns: 100%;
@@ -10,6 +12,8 @@
 .CategorySelector {
   border: solid 2px rgb(175, 223, 175);
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: fit-content;
   padding: 10px;
   margin: 10px;
@@ -23,6 +27,19 @@
   border-radius: 5px;
 }
 
+#sort_by_text {
+  padding: 10px;
+  padding-bottom: 10px;
+}
+
+.sort_by {
+  padding: 10px;
+}
+
+#select_sort_by {
+  font-size: medium;
+}
+
 .ReviewList {
   border: solid 2px red;
   padding: 10px;
@@ -30,18 +47,20 @@
 }
 
 .ReviewCard {
+  border: rgb(202, 202, 202) solid 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   min-height: 150px;
   height: fit-content;
   max-width: 700px;
+  min-width: 450px;
   margin: 0 auto;
   width: 80vw;
-  border: rgb(202, 202, 202) solid 1px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
   border-radius: 2px;
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 40% 30%;
+  grid-template-rows: 33% 34% 33%;
   grid-template-areas:
     "profile image"
     "title image"
@@ -57,6 +76,8 @@
 }
 
 .reviewCard_title {
+  display: flex;
+  align-items: center;
   grid-area: title;
   text-align: left;
   padding-top: 5px;
@@ -71,7 +92,7 @@
   padding-left: 15px;
 }
 
-.review_img {
+.review_card_img {
   width: 180px;
   height: 90px;
   grid-area: image;

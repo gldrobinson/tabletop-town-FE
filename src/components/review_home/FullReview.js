@@ -1,6 +1,7 @@
 import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
+import { Link } from "react-router-dom";
 
 import Votes from "../review_components/Votes";
 
@@ -37,11 +38,18 @@ const FullReview = () => {
         <p className="time">{timeAgo}</p>
       </div>
       <h3 id="full_review_title">{title}</h3>
-      <p id="full_review_designer">
-        {designer} - {category}
-      </p>
+
       <p id="full_review_body">{review_body}</p>
-      <img id="full_review_img" src={review_image_url} />
+      <div className="image_container">
+        <img class="full_review_img" src={review_image_url} />
+        <p className="full_review_designer">{designer}</p>
+        <Link
+          to={`/reviews/category/${category}`}
+          className="full_review_designer"
+        >
+          {category}
+        </Link>
+      </div>
       <Votes review_id={review_id} votes={votes} />
     </section>
   );

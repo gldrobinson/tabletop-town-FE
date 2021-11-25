@@ -60,7 +60,7 @@ const ReviewCard = ({ review }) => {
       </div>
       <img
         onClick={handleOnClick}
-        className="review_img"
+        className="review_card_img"
         src={review_image_url}
         alt={designer}
       />
