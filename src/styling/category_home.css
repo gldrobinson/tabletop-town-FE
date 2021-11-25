@@ -1,4 +1,6 @@
 .CategoryHome {
+  margin: 0 auto;
+  max-width: 90vw;
   border: solid 2px blue;
   display: grid;
   grid-template-columns: 100%;
@@ -7,19 +9,34 @@
 
 .CategorySelector {
   border: solid 2px rgb(175, 223, 175);
+  height: fit-content;
   padding: 10px;
+  margin: 10px;
+}
+.category {
+  text-transform: capitalize;
+  margin: 5px;
+  padding: 5px;
+  border: rgb(202, 202, 202) solid 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .ReviewList {
   border: solid 2px red;
   padding: 10px;
+  margin: 10px;
 }
 
 .ReviewCard {
-  height: 150px;
+  min-height: 150px;
+  height: fit-content;
+  max-width: 700px;
   margin: 0 auto;
-  width: 700px;
-  border: solid 2px darkblue;
+  width: 80vw;
+  border: rgb(202, 202, 202) solid 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -28,6 +45,10 @@
     "profile image"
     "title image"
     "interaction image";
+}
+
+.space_div {
+  padding: 5px;
 }
 
 .profile_selection {

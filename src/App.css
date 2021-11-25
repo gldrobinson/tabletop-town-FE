@@ -9,6 +9,8 @@
   min-height: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: min-content auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 .Header {

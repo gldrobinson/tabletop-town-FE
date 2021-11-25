@@ -11,7 +11,11 @@ const CategorySelector = () => {
     <nav className="CategorySelector">
       {categories.map((category) => {
         return (
-          <Link key={category.slug} to={`/reviews/category/${category.slug}`}>
+          <Link
+            className="category"
+            key={category.slug}
+            to={`/reviews/category/${category.slug}`}
+          >
             {category.slug}{" "}
           </Link>
         );

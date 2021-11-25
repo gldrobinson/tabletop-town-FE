@@ -12,7 +12,12 @@ const ReviewList = () => {
   return (
     <main className="ReviewList">
       {reviews.map((review) => {
-        return <ReviewCard key={review.review_id} review={review} />;
+        return (
+          <section>
+            <ReviewCard key={review.review_id} review={review} />
+            <div className="space_div"></div>
+          </section>
+        );
       })}
     </main>
   );
