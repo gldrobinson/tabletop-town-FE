@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/api";
 
-const useReviews = (category, sortBy, order) => {
+const useReviews = (category, sortByFilter) => {
+  let sortBy;
+  let order;
+
+  if (sortByFilter) {
+    const queries = sortByFilter.split("/");
+    sortBy = queries[0];
+    order = queries[1];
+  }
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
