@@ -7,18 +7,30 @@ const Votes = ({ review_id, votes, comment_id }) => {
   const handleUpVote = () => {
     incVote();
     if (!comment_id) {
-      patchReviewVote(review_id, 1);
+      patchReviewVote(review_id, 1).catch((err) => {
+        return <p>Sorry something went wrong...</p>;
+        decVote();
+      });
     } else {
-      patchCommentVote(comment_id, 1);
+      patchCommentVote(comment_id, 1).catch((err) => {
+        return <p>Sorry something went wrong...</p>;
+        decVote();
+      });
     }
   };
 
   const handleDownVote = () => {
     decVote();
     if (!comment_id) {
-      patchReviewVote(review_id, -1);
+      patchReviewVote(review_id, -1).catch((err) => {
+        return <p>Sorry something went wrong...</p>;
+        incVote();
+      });
     } else {
-      patchCommentVote(comment_id, -1);
+      patchCommentVote(comment_id, -1).catch((err) => {
+        return <p>Sorry something went wrong...</p>;
+        incVote();
+      });
     }
   };
 
