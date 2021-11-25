@@ -41,7 +41,7 @@ const FullReview = () => {
 
       <p id="full_review_body">{review_body}</p>
       <div className="image_container">
-        <img class="full_review_img" src={review_image_url} />
+        <img className="full_review_img" src={review_image_url} />
         <p className="full_review_designer">{designer}</p>
         <Link
           to={`/reviews/category/${category}`}

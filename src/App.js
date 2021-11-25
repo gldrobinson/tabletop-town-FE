@@ -9,7 +9,7 @@ import { useState } from "react";
 import ReviewHome from "./components/review_home/ReviewHome";
 
 function App() {
-  const [user, setUser] = useState({ username: "jessjelly'" });
+  const [user, setUser] = useState({ username: "jessjelly" });
   return (
     <div className="App">
       <Header />

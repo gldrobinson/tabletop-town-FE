@@ -125,3 +125,17 @@
 .full_review_designer {
   text-transform: capitalize;
 }
+
+.add_comment {
+  padding-top: 10px;
+  padding-left: 47px;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.new_comment {
+  padding-top: 10px;
+  width: 800px;
+}
