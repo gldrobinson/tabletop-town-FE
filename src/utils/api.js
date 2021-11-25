@@ -11,7 +11,6 @@ export const getCategories = () => {
 };
 
 export const getReviews = (category, sortBy, order) => {
-  console.log(category, sortBy, order);
   return gamesApi
     .get("/reviews", {
       params: { category: category, sort_by: sortBy, order: order },

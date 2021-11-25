@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ReviewList = () => {
   const { category } = useParams();
-  const [sortByFilter, setSortByFilter] = useState(null);
+  const [sortByFilter, setSortByFilter] = useState("");
   const { reviews, isLoading, error } = useReviews(category, sortByFilter);
 
   const handleOnChange = (e) => {
@@ -25,6 +25,7 @@ const ReviewList = () => {
         onChange={handleOnChange}
         id="sort_by"
         name="sort_by"
+        key="sort_by"
       >
         <option key="review_created_at/desc" value="review_created_at/desc">
           Recent
