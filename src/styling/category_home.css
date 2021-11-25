@@ -9,6 +9,7 @@
 
 .CategorySelector {
   border: solid 2px rgb(175, 223, 175);
+  display: flex;
   height: fit-content;
   padding: 10px;
   margin: 10px;
