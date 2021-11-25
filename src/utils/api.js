@@ -38,7 +38,7 @@ export const patchReviewVote = (id, increment) => {
       inc_votes: increment,
     })
     .then((res) => {
-      console.log(res);
+      return res.data.review;
     });
 };
 
@@ -48,6 +48,6 @@ export const patchCommentVote = (id, increment) => {
       inc_votes: increment,
     })
     .then((res) => {
-      console.log(res);
+      return res.data.comment;
     });
 };
