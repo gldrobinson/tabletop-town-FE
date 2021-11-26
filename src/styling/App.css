@@ -44,3 +44,26 @@
   padding: 10px;
   padding-bottom: 10px;
 }
+
+.profile_section {
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  grid-area: profile;
+}
+
+.profile_img {
+  width: 25px;
+  height: 25px;
+  border: white solid 3px;
+  border-radius: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.profile_author {
+  padding-top: 4px;
+  color: rgb(32, 32, 145);
+}
