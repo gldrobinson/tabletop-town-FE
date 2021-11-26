@@ -23,8 +23,6 @@ const FullReview = () => {
   const date = new Date(review_created_at);
   const timeAgo = moment(date).fromNow();
 
-  console.log(error);
-
   if (isLoading) return <Loading />;
   if (error) return <p className="error_handling">{error}</p>;
 
@@ -43,7 +41,11 @@ const FullReview = () => {
 
       <p id="full_review_body">{review_body}</p>
       <div className="image_container">
-        <img className="full_review_img" src={review_image_url} />
+        <img
+          className="full_review_img"
+          src={review_image_url}
+          alt={designer}
+        />
         <p className="full_review_designer">{designer}</p>
         <Link
           to={`/reviews/category/${category}`}

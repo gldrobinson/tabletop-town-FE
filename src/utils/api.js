@@ -53,18 +53,12 @@ export const patchCommentVote = (id, increment) => {
 };
 
 export const postComment = (id, body, username) => {
-  return gamesApi
-    .post(`/reviews/${id}/comments`, {
-      username: username,
-      comment_body: body,
-    })
-    .then((res) => {
-      console.log(res.data);
-    });
+  return gamesApi.post(`/reviews/${id}/comments`, {
+    username: username,
+    comment_body: body,
+  });
 };
 
 export const deleteComment = (id) => {
-  return gamesApi.delete(`/comments/${id}`).then((res) => {
-    console.log(res);
-  });
+  return gamesApi.delete(`/comments/${id}`);
 };

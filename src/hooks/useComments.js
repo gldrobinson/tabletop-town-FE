@@ -18,7 +18,7 @@ const useComments = (review_id, reviewsUpdated) => {
         setIsLoading(false);
         setError(true);
       });
-  }, [reviewsUpdated]);
+  }, [review_id, reviewsUpdated]);
 
   return { comments, error, isLoading };
 };

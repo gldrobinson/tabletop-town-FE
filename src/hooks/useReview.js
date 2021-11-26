@@ -27,7 +27,7 @@ const useReview = (review_id) => {
           setError("sorry something went wrong!");
         }
       });
-  }, []);
+  }, [review_id]);
 
   return { review, isLoading, error };
 };

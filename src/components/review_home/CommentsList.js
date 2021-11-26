@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import useComments from "../../hooks/useComments";
-import Loading from "../reusabe_components/Loading";
 import CommentCard from "./CommentCard";
 import NewComment from "./NewComment";
 

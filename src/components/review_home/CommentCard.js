@@ -1,5 +1,4 @@
 import moment from "moment";
-import useVoter from "../../hooks/useVoter";
 import DeleteButton from "../reusabe_components/DeleteButton";
 
 import Votes from "../reusabe_components/Votes";
