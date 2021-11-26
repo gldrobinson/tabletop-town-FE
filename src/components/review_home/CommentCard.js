@@ -1,6 +1,5 @@
 import moment from "moment";
 import DeleteButton from "../reusabe_components/DeleteButton";
-
 import Votes from "../reusabe_components/Votes";
 
 const CommentCard = ({ comment, setReviewsUpdated }) => {

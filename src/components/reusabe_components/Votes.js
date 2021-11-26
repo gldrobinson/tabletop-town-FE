@@ -1,8 +1,13 @@
 import useVoter from "../../hooks/useVoter";
 import { patchReviewVote, patchCommentVote } from "../../utils/api";
+import Loading from "./Loading";
 
 const Votes = ({ review_id, votes, comment_id }) => {
   const { addedVotes, incVote, decVote } = useVoter(0);
+
+  while (!votes) {
+    return <Loading />;
+  }
 
   const handleUpVote = () => {
     incVote();

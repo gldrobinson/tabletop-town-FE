@@ -53,8 +53,8 @@ const ReviewList = () => {
 
       {reviews.map((review) => {
         return (
-          <section>
-            <ReviewCard key={review.review_id} review={review} />
+          <section key={review.review_id}>
+            <ReviewCard review={review} />
             <div className="space_div"></div>
           </section>
         );

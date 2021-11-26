@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useVoter = (originalVote) => {
+const useVoter = () => {
   const [addedVotes, setAddedVotes] = useState(0);
 
   const incVote = () => {
