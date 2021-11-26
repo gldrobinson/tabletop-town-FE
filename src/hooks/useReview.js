@@ -17,10 +17,14 @@ const useReview = (review_id) => {
       })
       .catch((err) => {
         setIsLoading(false);
-        if (err.response.status === 404) {
+        if (!err.response.status) {
+          setError("sorry something went wrong!");
+        } else if (err.response.status === 404) {
           setError("Review not found");
+        } else if (err.response.status === 404) {
+          setError("Review is invalid");
         } else {
-          setError("Review not allowed");
+          setError("sorry something went wrong!");
         }
       });
   }, []);

@@ -1,25 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router";
-import { getComments } from "../../utils/api";
+import useComments from "../../hooks/useComments";
 import CommentCard from "./CommentCard";
 import NewComment from "./NewComment";
 
 const CommentsList = () => {
   const { review_id } = useParams();
   const [reviewsUpdated, setReviewsUpdated] = useState(0);
-  const [comments, setComments] = useState([]);
+  const { comments, error, isLoading } = useComments(review_id, reviewsUpdated);
 
-  useEffect(() => {
-    getComments(review_id)
-      .then((commentsReceived) => {
-        setComments(commentsReceived);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [reviewsUpdated]);
-
-  console.log(reviewsUpdated);
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p className="error_handling">{error}</p>;
 
   return (
     <main className="CommentList">

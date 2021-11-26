@@ -3,7 +3,6 @@ import "./styling/review_home.css";
 import "./styling/category_home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContext } from "./contexts/UserContext";
-import Header from "./components/Header.js";
 import CategoryHome from "./components/category_home/CategoryHome";
 import { useState } from "react";
 import ReviewHome from "./components/review_home/ReviewHome";

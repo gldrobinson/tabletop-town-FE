@@ -10,7 +10,6 @@ const ReviewList = () => {
 
   const handleOnChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setSortByFilter(e.target.value);
   };
 

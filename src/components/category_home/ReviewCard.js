@@ -6,7 +6,6 @@ const ReviewCard = ({ review }) => {
   const navigate = useNavigate();
   const {
     title,
-    // category,
     review_id,
     designer,
     review_image_url,

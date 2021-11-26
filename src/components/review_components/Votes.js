@@ -8,13 +8,13 @@ const Votes = ({ review_id, votes, comment_id }) => {
     incVote();
     if (!comment_id) {
       patchReviewVote(review_id, 1).catch((err) => {
-        return <p>Sorry something went wrong...</p>;
         decVote();
+        return <p className="error_handling">Sorry something went wrong...</p>;
       });
     } else {
       patchCommentVote(comment_id, 1).catch((err) => {
-        return <p>Sorry something went wrong...</p>;
         decVote();
+        return <p className="error_handling">Sorry something went wrong...</p>;
       });
     }
   };
@@ -23,13 +23,13 @@ const Votes = ({ review_id, votes, comment_id }) => {
     decVote();
     if (!comment_id) {
       patchReviewVote(review_id, -1).catch((err) => {
-        return <p>Sorry something went wrong...</p>;
         incVote();
+        return <p className="error_handling">Sorry something went wrong...</p>;
       });
     } else {
       patchCommentVote(comment_id, -1).catch((err) => {
-        return <p>Sorry something went wrong...</p>;
         incVote();
+        return <p className="error_handling">Sorry something went wrong...</p>;
       });
     }
   };
