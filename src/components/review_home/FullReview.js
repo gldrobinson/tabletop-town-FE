@@ -4,6 +4,7 @@ import useReview from "../../hooks/useReview";
 import { Link } from "react-router-dom";
 import Votes from "../reusabe_components/Votes";
 import Loading from "../reusabe_components/Loading";
+import ProfileAvatar from "../reusabe_components/ProfileAvatar";
 
 const FullReview = () => {
   const { review_id } = useParams();
@@ -29,11 +30,7 @@ const FullReview = () => {
   return (
     <section className="FullReview">
       <div id="full_review_profile" className="profile_section">
-        <img
-          className="profile_img"
-          src="https://pngimg.com/uploads/circle/circle_PNG12.png"
-          alt="profile img"
-        />
+        <ProfileAvatar username={owner} />
         <p className="profile_author">{owner}</p>
         <p className="time">{timeAgo}</p>
       </div>
