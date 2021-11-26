@@ -10,7 +10,6 @@ const CommentsList = () => {
   const { comments, error, isLoading } = useComments(review_id, reviewsUpdated);
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p className="error_handling">{error}</p>;
 
   return (
     <main className="CommentList">
@@ -25,7 +24,7 @@ const CommentsList = () => {
           );
         })}
       </section>
-      <NewComment setReviewsUpdated={setReviewsUpdated} />
+      <NewComment error={error} setReviewsUpdated={setReviewsUpdated} />
     </main>
   );
 };

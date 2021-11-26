@@ -22,6 +22,8 @@ const FullReview = () => {
   const date = new Date(review_created_at);
   const timeAgo = moment(date).fromNow();
 
+  console.log(error);
+
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p className="error_handling">{error}</p>;
 

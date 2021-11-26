@@ -3,8 +3,8 @@ import { getComments } from "../utils/api";
 
 const useComments = (review_id, reviewsUpdated) => {
   const [comments, setComments] = useState([]);
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -16,7 +16,7 @@ const useComments = (review_id, reviewsUpdated) => {
       })
       .catch((err) => {
         setIsLoading(false);
-        setError("sorry something went wrong!");
+        setError(true);
       });
   }, [reviewsUpdated]);
 

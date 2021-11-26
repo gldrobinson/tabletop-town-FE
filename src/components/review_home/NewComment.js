@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { postComment } from "../../utils/api";
 
-const NewComment = ({ setReviewsUpdated }) => {
+const NewComment = ({ setReviewsUpdated, error }) => {
   const { user } = useContext(UserContext);
   const { review_id } = useParams();
   const [newComment, setNewComment] = useState("");
@@ -22,6 +22,7 @@ const NewComment = ({ setReviewsUpdated }) => {
       setNewComment("");
     });
   };
+  if (error) return <div></div>;
 
   return (
     <section className="NewComment">
