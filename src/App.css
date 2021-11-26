@@ -28,3 +28,10 @@
 .header_title:hover {
   color: #f05454;
 }
+
+.error_handling {
+  border: #dddddd solid 10px;
+  background-color: #dddddd;
+  color: #30475e;
+  text-transform: capitalize;
+}

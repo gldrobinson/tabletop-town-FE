@@ -5,7 +5,7 @@ const CategorySelector = () => {
   const { categories, isLoading, error } = useCategories();
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className="error_handling">{error}</p>;
 
   return (
     <nav className="CategorySelector">

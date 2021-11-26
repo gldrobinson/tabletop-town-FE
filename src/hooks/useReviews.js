@@ -25,7 +25,13 @@ const useReviews = (category, sortByFilter) => {
       .catch((err) => {
         console.dir(err);
         setIsLoading(false);
-        setError("category not found");
+        if (err.response.status === 404) {
+          setError("category not found");
+        } else if (err.response.status === 404) {
+          setError("category is invalid");
+        } else {
+          setError("sorry something went wrong");
+        }
       });
   }, [category, sortBy, order]);
 

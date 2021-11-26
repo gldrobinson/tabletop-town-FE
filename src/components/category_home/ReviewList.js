@@ -15,7 +15,7 @@ const ReviewList = () => {
   };
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className="error_handling">{error}</p>;
 
   return (
     <main className="ReviewList">

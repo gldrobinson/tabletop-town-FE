@@ -23,7 +23,7 @@ const FullReview = () => {
   const timeAgo = moment(date).fromNow();
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className="error_handling">{error}</p>;
 
   return (
     <section className="FullReview">
