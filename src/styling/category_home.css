@@ -11,12 +11,13 @@
 }
 
 .CategorySelector {
+  /* border: greenyellow solid 2px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: fit-content;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .CategoryHome h3 {
@@ -46,7 +47,8 @@
 }
 
 .sort_by {
-  padding: 10px;
+  /* border: palevioletred solid 2px; */
+  padding: 5px;
 }
 
 #select_sort_by {
@@ -56,8 +58,7 @@
 
 .ReviewList {
   /* border: solid 2px red; */
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
 }
 
 .ReviewCard {
@@ -70,12 +71,12 @@
   min-width: 450px;
   margin: 0 auto;
   width: 80vw;
-
+  align-items: center;
   border-radius: 2px;
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "profile image"
     "title image"

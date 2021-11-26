@@ -15,6 +15,7 @@
 
 .Header {
   text-align: centre;
+  padding-bottom: 5px;
 }
 
 .header_title {
@@ -52,6 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
   grid-area: profile;
 }
 
@@ -66,4 +68,10 @@
 .profile_author {
   padding-top: 4px;
   color: rgb(32, 32, 145);
+}
+
+.time {
+  padding-top: 4px;
+  padding-left: 10px;
+  font-size: 14px;
 }

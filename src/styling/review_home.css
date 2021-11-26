@@ -81,16 +81,11 @@
   padding: 10px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 3% 94% 3%;
+  grid-template-columns: 3% 90% 7%;
   grid-template-rows: auto auto;
   grid-template-areas:
     "votes profile"
     "votes comment_body";
-}
-
-.time {
-  padding-top: 4px;
-  padding-left: 10px;
 }
 
 .comment_body {
@@ -155,4 +150,8 @@
   border-radius: 5px;
   color: #dddddd;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.comment_button:hover {
+  background-color: #f05454;
 }
