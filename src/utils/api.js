@@ -51,3 +51,14 @@ export const patchCommentVote = (id, increment) => {
       return res.data.comment;
     });
 };
+
+export const postComment = (id, body, username) => {
+  return gamesApi
+    .post(`/reviews/${id}/comments`, {
+      username: username,
+      comment_body: body,
+    })
+    .then((res) => {
+      console.log(res.data);
+    });
+};

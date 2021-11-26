@@ -2,7 +2,6 @@ import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
 import { Link } from "react-router-dom";
-
 import Votes from "../review_components/Votes";
 
 const FullReview = () => {

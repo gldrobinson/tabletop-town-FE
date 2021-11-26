@@ -3,7 +3,7 @@
   margin: 0 auto;
   max-width: 90vw;
   min-width: 500px;
-  border: solid 2px blue;
+  /* border: solid 2px blue; */
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content min-content auto;
@@ -41,7 +41,7 @@
 }
 
 .ReviewList {
-  border: solid 2px red;
+  /* border: solid 2px red; */
   padding: 10px;
   margin: 10px;
 }
