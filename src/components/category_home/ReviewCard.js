@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import ProfileAvatar from "../reusabe_components/ProfileAvatar";
 
 const ReviewCard = ({ review }) => {
   const navigate = useNavigate();
@@ -25,11 +26,7 @@ const ReviewCard = ({ review }) => {
   return (
     <section className="ReviewCard">
       <div className="profile_section">
-        <img
-          className="profile_img"
-          src="https://pngimg.com/uploads/circle/circle_PNG12.png"
-          alt="profile img"
-        />
+        <ProfileAvatar username={owner} />
         <p className="profile_author">{owner}</p>
         <p className="time">{timeAgo}</p>
       </div>

@@ -62,3 +62,9 @@ export const postComment = (id, body, username) => {
 export const deleteComment = (id) => {
   return gamesApi.delete(`/comments/${id}`);
 };
+
+export const getUserInfo = (username) => {
+  return gamesApi.get(`/users/${username}`).then((res) => {
+    return res.data.user;
+  });
+};
