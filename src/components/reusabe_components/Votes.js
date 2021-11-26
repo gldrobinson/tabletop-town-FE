@@ -1,13 +1,26 @@
+import { useEffect } from "react";
+import { useState } from "react/cjs/react.development";
 import useVoter from "../../hooks/useVoter";
 import { patchReviewVote, patchCommentVote } from "../../utils/api";
 import Loading from "./Loading";
 
 const Votes = ({ review_id, votes, comment_id }) => {
   const { addedVotes, incVote, decVote } = useVoter(0);
+  // const [isLoading, setIsLoading] = useState(false);
 
-  while (!votes) {
-    return <Loading />;
-  }
+  // useEffect(() => {
+  //   if (!votes) {
+  //     console.log("in !votes");
+  //     setIsLoading(true);
+  //   } else {
+  //     console.log("in else");
+  //     setIsLoading(false);
+  //   }
+  // }, [votes]);
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
 
   const handleUpVote = () => {
     incVote();

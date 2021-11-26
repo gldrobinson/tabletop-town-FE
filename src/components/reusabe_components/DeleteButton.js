@@ -6,8 +6,8 @@ const DeleteButton = ({ author, comment_id, setReviewsUpdated }) => {
   const { user } = useContext(UserContext);
   const handleDelete = () => {
     deleteComment(comment_id).then(() => {
-      setReviewsUpdated((currVal) => {
-        return currVal + 1;
+      setReviewsUpdated((currentVal) => {
+        return currentVal + 1;
       });
     });
   };

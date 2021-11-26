@@ -7,7 +7,11 @@ import NewComment from "./NewComment";
 const CommentsList = () => {
   const { review_id } = useParams();
   const [reviewsUpdated, setReviewsUpdated] = useState(0);
-  const { comments, error } = useComments(review_id, reviewsUpdated);
+  const { comments, error } = useComments(
+    review_id,
+    reviewsUpdated,
+    setReviewsUpdated
+  );
 
   return (
     <main className="CommentList">
@@ -22,7 +26,11 @@ const CommentsList = () => {
           );
         })}
       </section>
-      <NewComment error={error} setReviewsUpdated={setReviewsUpdated} />
+      {reviewsUpdated > 0 ? (
+        <NewComment error={error} setReviewsUpdated={setReviewsUpdated} />
+      ) : (
+        <></>
+      )}
     </main>
   );
 };
