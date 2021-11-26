@@ -2,6 +2,7 @@ import ReviewCard from "./ReviewCard";
 import { useParams } from "react-router";
 import useReviews from "../../hooks/useReviews";
 import { useState } from "react";
+import Loading from "../reusabe_components/Loading";
 
 const ReviewList = () => {
   const { category } = useParams();
@@ -13,7 +14,7 @@ const ReviewList = () => {
     setSortByFilter(e.target.value);
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loading />;
   if (error) return <p className="error_handling">{error}</p>;
 
   return (

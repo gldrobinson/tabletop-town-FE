@@ -2,7 +2,8 @@ import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
 import { Link } from "react-router-dom";
-import Votes from "../review_components/Votes";
+import Votes from "../reusabe_components/Votes";
+import Loading from "../reusabe_components/Loading";
 
 const FullReview = () => {
   const { review_id } = useParams();
@@ -24,7 +25,7 @@ const FullReview = () => {
 
   console.log(error);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loading />;
   if (error) return <p className="error_handling">{error}</p>;
 
   return (

@@ -1,8 +1,8 @@
 import moment from "moment";
 import useVoter from "../../hooks/useVoter";
-import DeleteButton from "../review_components/DeleteButton";
+import DeleteButton from "../reusabe_components/DeleteButton";
 
-import Votes from "../review_components/Votes";
+import Votes from "../reusabe_components/Votes";
 
 const CommentCard = ({ comment, setReviewsUpdated }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =

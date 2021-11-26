@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import useComments from "../../hooks/useComments";
+import Loading from "../reusabe_components/Loading";
 import CommentCard from "./CommentCard";
 import NewComment from "./NewComment";
 
 const CommentsList = () => {
   const { review_id } = useParams();
   const [reviewsUpdated, setReviewsUpdated] = useState(0);
-  const { comments, error, isLoading } = useComments(review_id, reviewsUpdated);
-
-  if (isLoading) return <p>Loading...</p>;
+  const { comments, error } = useComments(review_id, reviewsUpdated);
 
   return (
     <main className="CommentList">

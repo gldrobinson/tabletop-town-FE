@@ -35,3 +35,12 @@
   color: #30475e;
   text-transform: capitalize;
 }
+
+.loading_gif {
+  text-align: center;
+  margin: 0 auto;
+  border: white solid 3px;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 10px;
+}
