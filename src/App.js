@@ -12,7 +12,6 @@ function App() {
   const [user, setUser] = useState({ username: "jessjelly" });
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
         <UserContext.Provider value={{ user, setUser }}>
           <Routes>

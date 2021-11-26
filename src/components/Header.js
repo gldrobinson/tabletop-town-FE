@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="Header">
-      <h1>Tabletop Town</h1>
+      <Link className="header_title" to="/">
+        Tabletop Town
+      </Link>
     </header>
   );
 };

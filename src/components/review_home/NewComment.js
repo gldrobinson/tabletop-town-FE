@@ -24,7 +24,7 @@ const NewComment = ({ setReviewsUpdated }) => {
   };
 
   return (
-    <section className="add_comment">
+    <section className="NewComment">
       <div className="profile_section new_comment">
         <img
           className="profile_img"

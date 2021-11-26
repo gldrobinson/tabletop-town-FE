@@ -1,10 +1,11 @@
 import FullReview from "./FullReview";
 import CommentsList from "./CommentsList";
+import Header from "../Header";
 
 const ReviewHome = () => {
   return (
     <main className="ReviewHome">
-      <h2>Review Home</h2>
+      <Header />
       <FullReview />
       <CommentsList />
     </main>

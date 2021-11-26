@@ -3,12 +3,15 @@
   margin: 0 auto;
   max-width: 90vw;
   min-width: 500px;
+  background-color: #30475e;
+  border: #30475e solid 20px;
 }
 
 .FullReview {
   border: rgb(202, 202, 202) solid 1px;
+  background-color: #dddddd;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 800px;
+  max-width: 600px;
   min-width: 450px;
   margin: 0 auto;
   padding: 10px;
@@ -63,15 +66,17 @@
   height: fit-content;
   min-height: fit-content;
   min-width: 450px;
+  max-width: 800px;
   padding-top: 5px;
 }
 
 .CommentCard {
   /* border: pink solid 2px; */
   border: rgb(202, 202, 202) solid 1px;
+  background-color: #dddddd;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: auto;
-  max-width: 800px;
+  max-width: 600px;
   min-width: 450px;
   padding: 10px;
   margin: 0 auto;
@@ -131,11 +136,12 @@
   text-transform: capitalize;
 }
 
-.add_comment {
+.NewComment {
   border: rgb(202, 202, 202) solid 1px;
+  background-color: #dddddd;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: auto;
-  max-width: 800px;
+  max-width: 600px;
   min-width: 450px;
   padding: 10px;
   margin: 0 auto;
@@ -143,9 +149,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  /* grid-template-columns: 30% 70%;
-  grid-template-rows: auto;
-  grid-template-areas: "profile_comment new_comment_body"; */
 }
 
 .new_comment {
@@ -161,9 +164,15 @@
   width: fit-content;
   max-width: 800px;
   padding-left: 30px;
+  background-color: #dddddd;
+  border: #30475e solid 2px;
 }
 
 .comment_button {
   margin: 5px;
-  padding: 2px;
+  padding: 2px 4px;
+  background-color: #30475e;
+  border-radius: 5px;
+  color: #dddddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
