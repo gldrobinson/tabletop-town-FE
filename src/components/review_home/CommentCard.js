@@ -1,9 +1,10 @@
 import moment from "moment";
 import useVoter from "../../hooks/useVoter";
+import DeleteButton from "../review_components/DeleteButton";
 
 import Votes from "../review_components/Votes";
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, setReviewsUpdated }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =
     comment;
 
@@ -21,7 +22,13 @@ const CommentCard = ({ comment }) => {
         <p className="profile_author">{author}</p>
         <p className="time">{timeAgo}</p>
       </div>
+      <DeleteButton
+        setReviewsUpdated={setReviewsUpdated}
+        author={author}
+        comment_id={comment_id}
+      />
       <p className="comment_body">{comment_body}</p>
+
       <Votes comment_id={comment_id} votes={votes} />
     </section>
   );

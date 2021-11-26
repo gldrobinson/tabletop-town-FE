@@ -25,7 +25,13 @@ const CommentsList = () => {
     <main className="CommentList">
       <section className="comments_list">
         {comments.map((comment) => {
-          return <CommentCard key={comment.comment_id} comment={comment} />;
+          return (
+            <CommentCard
+              setReviewsUpdated={setReviewsUpdated}
+              key={comment.comment_id}
+              comment={comment}
+            />
+          );
         })}
       </section>
       <NewComment setReviewsUpdated={setReviewsUpdated} />
