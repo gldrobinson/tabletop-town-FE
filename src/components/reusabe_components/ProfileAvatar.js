@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUserInfo } from "../../utils/api";
 
-const ProfileAvatar = ({ username }) => {
+const ProfileAvatar = ({ username, review }) => {
+  console.log(username);
   const [avatar, setAvatar] = useState(
     "https://pngimg.com/uploads/circle/circle_PNG12.png"
   );
@@ -14,7 +15,7 @@ const ProfileAvatar = ({ username }) => {
       .catch(() => {
         setAvatar("https://pngimg.com/uploads/circle/circle_PNG12.png");
       });
-  }, []);
+  }, [review]);
   return <img className="profile_img" src={avatar} alt="profile img" />;
 };
 

@@ -1,6 +1,7 @@
 import moment from "moment";
 import DeleteButton from "../reusabe_components/DeleteButton";
 import Votes from "../reusabe_components/Votes";
+import ProfileAvatar from "../reusabe_components/ProfileAvatar";
 
 const CommentCard = ({ comment, setReviewsUpdated }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =
@@ -12,11 +13,7 @@ const CommentCard = ({ comment, setReviewsUpdated }) => {
   return (
     <section className="CommentCard">
       <div className="profile_section">
-        <img
-          className="profile_img"
-          src="https://pngimg.com/uploads/circle/circle_PNG12.png"
-          alt="profile img"
-        />
+        <ProfileAvatar username={author} />
         <p className="profile_author">{author}</p>
         <p className="time">{timeAgo}</p>
       </div>

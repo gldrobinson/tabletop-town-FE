@@ -2,6 +2,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { postComment } from "../../utils/api";
+import ProfileAvatar from "../reusabe_components/ProfileAvatar";
 
 const NewComment = ({ setReviewsUpdated, error }) => {
   const { user } = useContext(UserContext);
@@ -27,11 +28,7 @@ const NewComment = ({ setReviewsUpdated, error }) => {
   return (
     <section className="NewComment">
       <div className="profile_section new_comment">
-        <img
-          className="profile_img"
-          src="https://pngimg.com/uploads/circle/circle_PNG12.png"
-          alt="profile img"
-        />
+        <ProfileAvatar username={user.username} />
         <p className="profile_author">{user.username}</p>
         <p className="time">Now</p>
       </div>

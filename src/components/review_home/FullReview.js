@@ -30,7 +30,7 @@ const FullReview = () => {
   return (
     <section className="FullReview">
       <div id="full_review_profile" className="profile_section">
-        <ProfileAvatar username={owner} />
+        <ProfileAvatar username={owner} review={review} />
         <p className="profile_author">{owner}</p>
         <p className="time">{timeAgo}</p>
       </div>
