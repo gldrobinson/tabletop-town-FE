@@ -44,6 +44,7 @@ const NewComment = ({ setReviewsUpdated, error }) => {
           name="submit"
           value={newComment}
           onChange={handleInputChange}
+          required
         ></input>
         <button className="comment_button" type="submit">
           Post
