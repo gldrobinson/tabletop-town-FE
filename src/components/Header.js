@@ -12,7 +12,7 @@ const Header = () => {
       </Link>
       <div className="current_user">
         <ProfileAvatar username={user.username} />
-        <h2>{user.username}</h2>
+        <h2 className="current_user_username">{user.username}</h2>
       </div>
     </header>
   );
