@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { UserContext } from "../contexts/UserContext";
+import ProfileAvatar from "./reusabe_components/ProfileAvatar";
 
 const Header = () => {
   const { user } = useContext(UserContext);
@@ -9,7 +10,10 @@ const Header = () => {
       <Link className="header_title" to="/">
         Tabletop Town
       </Link>
-      <h2>{user.username}</h2>
+      <div className="current_user">
+        <ProfileAvatar username={user.username} />
+        <h2>{user.username}</h2>
+      </div>
     </header>
   );
 };

@@ -16,6 +16,9 @@
 .Header {
   text-align: centre;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .header_title {
@@ -28,6 +31,16 @@
 
 .header_title:hover {
   color: #f05454;
+}
+
+.current_user {
+  display: flex;
+  align-items: center;
+  color: #dddddd;
+}
+
+.current_user_username {
+  padding-left: 5px;
 }
 
 .error_handling {
