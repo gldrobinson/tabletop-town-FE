@@ -2,9 +2,9 @@ import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
 import { Link } from "react-router-dom";
-import Votes from "../reusabe_components/Votes";
-import Loading from "../reusabe_components/Loading";
-import ProfileAvatar from "../reusabe_components/ProfileAvatar";
+import Votes from "../reusable_components/Votes";
+import Loading from "../reusable_components/Loading";
+import ProfileAvatar from "../reusable_components/ProfileAvatar";
 
 const FullReview = () => {
   const { review_id } = useParams();

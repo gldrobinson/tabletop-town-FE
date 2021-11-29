@@ -1,7 +1,7 @@
 import moment from "moment";
-import DeleteButton from "../reusabe_components/DeleteButton";
-import Votes from "../reusabe_components/Votes";
-import ProfileAvatar from "../reusabe_components/ProfileAvatar";
+import DeleteButton from "../reusable_components/DeleteButton";
+import Votes from "../reusable_components/Votes";
+import ProfileAvatar from "../reusable_components/ProfileAvatar";
 
 const CommentCard = ({ comment, setReviewsUpdated }) => {
   const { author, comment_body, comment_created_at, comment_id, votes } =

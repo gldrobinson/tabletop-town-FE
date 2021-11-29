@@ -2,8 +2,8 @@ import { UserContext } from "../../contexts/UserContext";
 import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { postComment } from "../../utils/api";
-import ProfileAvatar from "../reusabe_components/ProfileAvatar";
-import Loading from "../reusabe_components/Loading";
+import ProfileAvatar from "../reusable_components/ProfileAvatar";
+import Loading from "../reusable_components/Loading";
 
 const NewComment = ({ setReviewsUpdated, error }) => {
   const { user } = useContext(UserContext);

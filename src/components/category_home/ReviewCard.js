@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import moment from "moment";
 import { Link } from "react-router-dom";
-import ProfileAvatar from "../reusabe_components/ProfileAvatar";
+import ProfileAvatar from "../reusable_components/ProfileAvatar";
 
 const ReviewCard = ({ review }) => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import ReviewCard from "./ReviewCard";
 import { useParams } from "react-router";
 import useReviews from "../../hooks/useReviews";
 import { useState } from "react";
-import Loading from "../reusabe_components/Loading";
+import Loading from "../reusable_components/Loading";
 
 const ReviewList = () => {
   const { category } = useParams();

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { UserContext } from "../contexts/UserContext";
-import ProfileAvatar from "./reusabe_components/ProfileAvatar";
+import ProfileAvatar from "./reusable_components/ProfileAvatar";
 
 const Header = () => {
   const { user } = useContext(UserContext);
