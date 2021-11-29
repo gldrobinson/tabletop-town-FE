@@ -6,6 +6,7 @@ import { UserContext } from "./contexts/UserContext";
 import CategoryHome from "./components/category_home/CategoryHome";
 import { useState } from "react";
 import ReviewHome from "./components/review_home/ReviewHome";
+import ErrorBadUrl from "./components/ErrorBadUrl";
 
 function App() {
   const [user, setUser] = useState({ username: "jessjelly" });
@@ -21,6 +22,7 @@ function App() {
               element={<CategoryHome />}
             />
             <Route path="/reviews/:review_id" element={<ReviewHome />} />
+            <Route path="/*" element={<ErrorBadUrl />} />
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>
