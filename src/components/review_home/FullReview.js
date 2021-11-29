@@ -1,10 +1,10 @@
-import moment from "moment";
 import { useParams } from "react-router";
 import useReview from "../../hooks/useReview";
 import { Link } from "react-router-dom";
 import Votes from "../reusable_components/Votes";
 import Loading from "../reusable_components/Loading";
 import ProfileAvatar from "../reusable_components/ProfileAvatar";
+import formatDate from "../../utils/formatDate";
 
 const FullReview = () => {
   const { review_id } = useParams();
@@ -21,8 +21,7 @@ const FullReview = () => {
     review_created_at,
   } = review;
 
-  const date = new Date(review_created_at);
-  const timeAgo = moment(date).fromNow();
+  const timeAgo = formatDate(review_created_at);
 
   if (isLoading) return <Loading />;
   if (error) return <p className="error_handling">{error}</p>;

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import moment from "moment";
 import { Link } from "react-router-dom";
+import formatDate from "../../utils/formatDate";
 import ProfileAvatar from "../reusable_components/ProfileAvatar";
 
 const ReviewCard = ({ review }) => {
@@ -16,8 +16,7 @@ const ReviewCard = ({ review }) => {
     review_created_at,
   } = review;
 
-  const date = new Date(review_created_at);
-  const timeAgo = moment(date).fromNow();
+  const timeAgo = formatDate(review_created_at);
 
   const handleOnClick = (e) => {
     navigate(`/reviews/${review_id}`);
