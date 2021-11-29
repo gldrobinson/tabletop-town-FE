@@ -59,6 +59,11 @@
   padding-bottom: 10px;
 }
 
+#delete_loading {
+  border: mediumorchid solid 2px;
+  margin: 0 auto;
+}
+
 .profile_section {
   text-align: left;
   padding-left: 15px;
