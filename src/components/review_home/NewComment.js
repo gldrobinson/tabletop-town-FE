@@ -3,11 +3,13 @@ import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { postComment } from "../../utils/api";
 import ProfileAvatar from "../reusabe_components/ProfileAvatar";
+import Loading from "../reusabe_components/Loading";
 
 const NewComment = ({ setReviewsUpdated, error }) => {
   const { user } = useContext(UserContext);
   const { review_id } = useParams();
   const [newComment, setNewComment] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -15,8 +17,10 @@ const NewComment = ({ setReviewsUpdated, error }) => {
   };
 
   const handleOnSubmit = (e) => {
+    setIsLoading(true);
     e.preventDefault();
     postComment(review_id, newComment, user.username).then((commentPosted) => {
+      setIsLoading(false);
       setReviewsUpdated((currentVal) => {
         return currentVal + 1;
       });
@@ -24,6 +28,7 @@ const NewComment = ({ setReviewsUpdated, error }) => {
     });
   };
   if (error) return <div></div>;
+  if (isLoading) return <Loading />;
 
   return (
     <section className="NewComment">
