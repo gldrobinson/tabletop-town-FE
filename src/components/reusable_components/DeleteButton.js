@@ -1,11 +1,14 @@
-import { useContext, useState } from "react/cjs/react.development";
+import { useContext } from "react/cjs/react.development";
 import { UserContext } from "../../contexts/UserContext";
 import { deleteComment } from "../../utils/api";
-import loading from "../../assets/loading.gif";
 
-const DeleteButton = ({ author, comment_id, setReviewsUpdated }) => {
+const DeleteButton = ({
+  author,
+  comment_id,
+  setReviewsUpdated,
+  setIsLoading,
+}) => {
   const { user } = useContext(UserContext);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleDelete = () => {
     setIsLoading(true);
@@ -17,15 +20,6 @@ const DeleteButton = ({ author, comment_id, setReviewsUpdated }) => {
     });
   };
 
-  if (isLoading)
-    return (
-      <img
-        className="loading_gif"
-        id="delete_loading"
-        src={loading}
-        alt="loading..."
-      />
-    );
   return (
     <main>
       {author === user.username ? (
