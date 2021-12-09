@@ -122,7 +122,7 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -135,7 +135,7 @@
 
 .new_comment_body {
   min-width: auto;
-  min-width: 300px;
+  min-width: 200px;
   width: fit-content;
   max-width: 800px;
   padding-left: 30px;
@@ -154,4 +154,8 @@
 
 .comment_button:hover {
   background-color: #f05454;
+}
+
+.comment_prompt {
+  font-size: 14px;
 }

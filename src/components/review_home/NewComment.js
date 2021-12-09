@@ -10,6 +10,7 @@ const NewComment = ({ setReviewsUpdated, error }) => {
   const { review_id } = useParams();
   const [newComment, setNewComment] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [commentPrompt, setCommentPrompt] = useState(false);
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -17,15 +18,23 @@ const NewComment = ({ setReviewsUpdated, error }) => {
   };
 
   const handleOnSubmit = (e) => {
-    setIsLoading(true);
     e.preventDefault();
-    postComment(review_id, newComment, user.username).then((commentPosted) => {
-      setIsLoading(false);
-      setReviewsUpdated((currentVal) => {
-        return currentVal + 1;
-      });
-      setNewComment("");
-    });
+    console.log(newComment);
+    if (newComment === "") {
+      setCommentPrompt(true);
+    } else {
+      setIsLoading(true);
+      setCommentPrompt(false);
+      postComment(review_id, newComment, user.username).then(
+        (commentPosted) => {
+          setIsLoading(false);
+          setReviewsUpdated((currentVal) => {
+            return currentVal + 1;
+          });
+          setNewComment("");
+        }
+      );
+    }
   };
   if (error) return <div></div>;
   if (isLoading) return <Loading />;
@@ -37,6 +46,7 @@ const NewComment = ({ setReviewsUpdated, error }) => {
         <p className="profile_author">{user.username}</p>
         <p className="time">Now</p>
       </div>
+
       <form onSubmit={handleOnSubmit}>
         <label htmlFor="new_comment"></label>
         <input
@@ -46,12 +56,19 @@ const NewComment = ({ setReviewsUpdated, error }) => {
           name="submit"
           value={newComment}
           onChange={handleInputChange}
-          required
+          // required
         ></input>
         <button className="comment_button" type="submit">
           Post
         </button>
       </form>
+      <div className="comment_prompt">
+        {commentPrompt ? (
+          <p>Please type in the box above to add a comment</p>
+        ) : (
+          <></>
+        )}
+      </div>
     </section>
   );
 };
