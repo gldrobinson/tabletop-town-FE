@@ -6,6 +6,8 @@ import Loading from "./Loading";
 
 const Votes = ({ review_id, votes, comment_id }) => {
   const { addedVotes, incVote, decVote } = useVoter(0);
+  const [disableReviewButton, setDisableReviewButton] = useState(false);
+  const [disableCommentButton, setDisableCommentButton] = useState(false);
   // const [isLoading, setIsLoading] = useState(false);
 
   // useEffect(() => {
@@ -23,32 +25,54 @@ const Votes = ({ review_id, votes, comment_id }) => {
   // }
 
   const handleUpVote = () => {
-    incVote();
     if (!comment_id) {
-      patchReviewVote(review_id, 1).catch((err) => {
-        decVote();
-        return <p className="error_handling">Sorry something went wrong...</p>;
-      });
+      if (!disableReviewButton) {
+        incVote();
+        setDisableReviewButton(true);
+        patchReviewVote(review_id, 1).catch((err) => {
+          decVote();
+          return (
+            <p className="error_handling">Sorry something went wrong...</p>
+          );
+        });
+      }
     } else {
-      patchCommentVote(comment_id, 1).catch((err) => {
-        decVote();
-        return <p className="error_handling">Sorry something went wrong...</p>;
-      });
+      if (!disableCommentButton) {
+        incVote();
+        setDisableCommentButton(true);
+        patchCommentVote(comment_id, 1).catch((err) => {
+          decVote();
+          return (
+            <p className="error_handling">Sorry something went wrong...</p>
+          );
+        });
+      }
     }
   };
 
   const handleDownVote = () => {
-    decVote();
     if (!comment_id) {
-      patchReviewVote(review_id, -1).catch((err) => {
-        incVote();
-        return <p className="error_handling">Sorry something went wrong...</p>;
-      });
+      if (!disableReviewButton) {
+        decVote();
+        setDisableReviewButton(true);
+        patchReviewVote(review_id, -1).catch((err) => {
+          incVote();
+          return (
+            <p className="error_handling">Sorry something went wrong...</p>
+          );
+        });
+      }
     } else {
-      patchCommentVote(comment_id, -1).catch((err) => {
-        incVote();
-        return <p className="error_handling">Sorry something went wrong...</p>;
-      });
+      if (!disableCommentButton) {
+        decVote();
+        setDisableCommentButton(true);
+        patchCommentVote(comment_id, -1).catch((err) => {
+          incVote();
+          return (
+            <p className="error_handling">Sorry something went wrong...</p>
+          );
+        });
+      }
     }
   };
 

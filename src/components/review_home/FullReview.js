@@ -5,10 +5,12 @@ import Votes from "../reusable_components/Votes";
 import Loading from "../reusable_components/Loading";
 import ProfileAvatar from "../reusable_components/ProfileAvatar";
 import formatDate from "../../utils/formatDate";
+import { useState } from "react";
 
 const FullReview = () => {
   const { review_id } = useParams();
   const { review, isLoading, error } = useReview(review_id);
+  const [disableButton, setDisableButton] = useState(false);
 
   const {
     title,
