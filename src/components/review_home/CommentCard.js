@@ -1,7 +1,7 @@
 import DeleteButton from "../reusable_components/DeleteButton";
 import Votes from "../reusable_components/Votes";
 import ProfileAvatar from "../reusable_components/ProfileAvatar";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import Loading from "../reusable_components/Loading";
 import formatDate from "../../utils/formatDate";
 
