@@ -2,7 +2,7 @@
 
 Welcome to Tabletop town. This is a React application that allow users to interact with reviews for a range of different board games. Users are encouraged to engage with the reviews and comments posted.
 
-It is hosted on netlify here: [ url to be added ]
+It is hosted on netlify here: https://tabletop-town.netlify.app/
 
 The backend server is hosted through heroku which you can find here: https://tabletop-town.herokuapp.com/api/
 
